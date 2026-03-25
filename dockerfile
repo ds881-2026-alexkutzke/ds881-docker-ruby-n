@@ -4,7 +4,6 @@ WORKDIR /app
 
 COPY Gemfile .
 
-# Instala ferramentas de build temporariamente, compila as gems e remove as ferramentas
 RUN apk add --no-cache --virtual .build-deps build-base \
     && bundle install \
     && apk del .build-deps
